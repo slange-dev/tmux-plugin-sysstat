@@ -27,7 +27,7 @@ Installation
 Best installed through [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (TMP). Add following line to your `.tmux.conf` file:
 
 ```
-set -g @plugin 'samoshkin/tmux-plugin-sysstat'
+set -g @plugin 'slange-dev/tmux-plugin-sysstat'
 ```
 
 Use `prefix + I` from inside tmux to install all plugins and source them. If you prefer, same effect can be achieved from [command line](https://github.com/tmux-plugins/tpm/blob/master/docs/managing_plugins_via_cmd_line.md):
