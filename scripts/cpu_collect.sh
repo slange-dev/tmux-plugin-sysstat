@@ -8,7 +8,7 @@ set -e
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/helpers.sh"
 
-refresh_interval=$(get_tmux_option "status-interval" "5")/2
+refresh_interval=$(get_tmux_option "status-interval" "5")
 samples_count="2"
 cpu_metric_file="$(get_tmux_option "@sysstat_cpu_tmp_dir" "/dev/null")/cpu_collect.metric"
 
@@ -32,7 +32,7 @@ get_cpu_usage() {
     fi
   else
     if is_freebsd; then
-      top -d"$samples_count" \
+      top -d "$samples_count" \
         | sed -u -nr '/CPU:/s/.*,[[:space:]]*([0-9]+[.,][0-9]*)%[[:space:]]*id.*/\1/p' \
         | stdbuf -o0 awk '{ print 100-$0 }'
     else
@@ -50,4 +50,3 @@ main() {
 }
 
 main
-
